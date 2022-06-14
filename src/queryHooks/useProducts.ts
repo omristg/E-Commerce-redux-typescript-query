@@ -10,7 +10,8 @@ const getProducts = async () => {
 
 export const useProducts = () => {
 
-    const { data: products = [] } = useQuery(queryKeys.products, getProducts)
+    const fallback: Product[] = []
+    const { data: products = fallback, isLoading } = useQuery(queryKeys.products, getProducts)
 
-    return { products }
+    return { products, isLoading }
 }

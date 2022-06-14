@@ -1,3 +1,9 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
 :root {
     --accent-clr: blueviolet;
     --layout-padding: 3rem;
@@ -26,6 +32,17 @@ li {
 a {
     text-decoration: none;
     color: inherit;
+}
+
+button {
+    color: inherit;
+    font-family: inherit;
+    background-color: #00000030;
+    padding: 0.25rem 0.6rem;
+    border: none;
+    border-radius: 0.25rem;
+    box-shadow: 0 3px 10px #00000030;
+    cursor: pointer;
 }
 
 .header {
@@ -105,6 +122,67 @@ a {
         img {
             width: 100%;
             vertical-align: text-bottom;
+        }
+    }
+}
+
+.product-details {
+    padding-inline: var(--layout-padding);
+    margin-bottom: 2rem;
+
+    .actions {
+        .btn-back {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            gap: 0.3rem;
+        }
+    }
+
+    .content {
+        width: 60%;
+        margin: auto;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1.5rem;
+        background-color: rgb(230, 230, 230);
+        box-shadow: 0 3px 10px #00000030;
+        gap: 1rem;
+
+        .title {
+            font-weight: 600;
+            align-self: center;
+        }
+
+        .ctg {
+            display: flex;
+            align-items: center;
+            span:first-child {
+                margin-inline-end: 0.5rem;
+            }
+
+            span:last-child {
+                padding: 0.2rem 0.5rem;
+                background-color: rgb(196, 196, 196);
+                top: 10%;
+                right: 10%;
+            }
+        }
+
+        .desc {
+            span:first-child {
+                margin-inline-end: 0.5rem;
+            }
+            margin-bottom: 0.5rem;
+        }
+
+        .img-container {
+            img {
+                width: 100%;
+                vertical-align: text-bottom;
+            }
         }
     }
 }

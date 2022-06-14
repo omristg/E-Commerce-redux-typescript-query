@@ -7,11 +7,11 @@ import { useProducts } from "../queryHooks/useProducts"
 
 export const Store = () => {
 
-    const { products } = useProducts()
+    const { products, isLoading } = useProducts()
 
     return (
         <div className="store">
-            <ProductList products={products} />
+            <ProductList products={products} isLoading={isLoading} />
         </div>
     )
 }
