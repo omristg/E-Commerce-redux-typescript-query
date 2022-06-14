@@ -13,7 +13,6 @@ const SHeader = styled.header`
     nav {
         display: flex;
         gap: 1.5rem;
-        /* flex-direction:  */
     }
     
     .active {
@@ -30,6 +29,7 @@ export const Header = () => {
             <nav>
                 <NavLink to='/'>Home</NavLink>
                 <NavLink to='/store'>Store</NavLink>
+                <NavLink to='/cart'>Cart</NavLink>
             </nav>
 
         </SHeader>

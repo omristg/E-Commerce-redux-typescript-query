@@ -186,3 +186,35 @@ button {
         }
     }
 }
+
+.cart {
+    .cart-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+
+        .cart-item {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            gap: 0.6rem;
+            border-bottom: 1px solid #e1e1e1;
+            padding: 0.5rem 0.15rem;
+            box-shadow: 0 1px 10px #00000010;
+
+            img {
+                width: 100%;
+                object-fit: cover;
+                max-width: 100px;
+            }
+
+            .actions {
+                .counter {
+                    display: flex;
+                    align-items: center;
+                    gap: 0.3rem;
+                }
+            }
+        }
+    }
+}

@@ -6,6 +6,7 @@ import { QueryClientProvider } from 'react-query'
 import { ReactQueryDevtools } from 'react-query/devtools'
 import { queryClient } from './queryHooks/queryClient'
 import { ProductDetails } from './pages/ProductDetails'
+import { Cart } from './pages/Cart'
 
 export const RootCmp = () => {
 
@@ -17,6 +18,7 @@ export const RootCmp = () => {
                     <Route index element={<Home />} />
                     <Route path='/store' element={<Store />} />
                     <Route path='/store/:productId' element={<ProductDetails />} />
+                    <Route path='/cart' element={<Cart />} />
                 </Routes>
             </Router>
             <ReactQueryDevtools />
