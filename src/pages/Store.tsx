@@ -2,19 +2,12 @@ import { useEffect, useState } from "react"
 import axios from 'axios'
 import { Product } from "../models/Product.model"
 import { ProductList } from "../cmps/ProductList"
+import { useProducts } from "../queryHooks/useProducts"
+
 
 export const Store = () => {
 
-    const [products, setProducts] = useState<Product[]>([])
-
-    useEffect(() => {
-        (async () => {
-            const { data } = await axios.get('https://api.escuelajs.co/api/v1/products')
-            setProducts(data)
-
-        })();
-    }, [])
-
+    const { products } = useProducts()
 
     return (
         <div className="store">

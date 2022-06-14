@@ -32,6 +32,7 @@ a {
     padding-inline: var(--layout-padding);
     padding-block: 2rem;
     background-color: black;
+    margin-bottom: 1.5rem;
 }
 
 .home {
@@ -57,7 +58,6 @@ a {
     background-color: rgb(230, 230, 230);
     box-shadow: 0 3px 10px #00000030;
     gap: 0.5rem;
-    // overflow: hidden;
 
     .title {
         font-weight: 600;

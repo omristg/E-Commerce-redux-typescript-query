@@ -8,10 +8,7 @@ type Props = {
 export const ProductPreview = ({ product }: Props) => {
 
     const [isDescOpen, setIsDescOpen] = useState(false)
-
     const { title, price, description: desc, category: ctg, images } = product
-
-    console.log(images);
 
     const formattedPrice = () => {
         return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(price)
