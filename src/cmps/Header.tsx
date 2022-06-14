@@ -1,6 +1,7 @@
 import { NavLink } from 'react-router-dom'
 
 import styled from 'styled-components'
+import { useCartItems } from '../queryHooks/useCartItems'
 
 const SHeader = styled.header`
 
@@ -23,13 +24,23 @@ const SHeader = styled.header`
 
 export const Header = () => {
 
+    const { cartItems } = useCartItems()
+
+    const totalItems = () => {
+        if (!cartItems) return ''
+        return cartItems.reduce((acc, item) => {
+            acc += item.quantity
+            return acc
+        }, 0)
+    }
+
     return (
         <SHeader className="header">
             <div className="logo">My Store</div>
             <nav>
                 <NavLink to='/'>Home</NavLink>
                 <NavLink to='/store'>Store</NavLink>
-                <NavLink to='/cart'>Cart</NavLink>
+                <NavLink to='/cart'>Cart {totalItems()}</NavLink>
             </nav>
 
         </SHeader>
