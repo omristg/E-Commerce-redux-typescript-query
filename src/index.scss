@@ -1,0 +1,110 @@
+:root {
+    --accent-clr: blueviolet;
+    --layout-padding: 3rem;
+}
+
+html {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+}
+
+body {
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+    text-decoration: none;
+    color: inherit;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.header {
+    padding-inline: var(--layout-padding);
+    padding-block: 2rem;
+    background-color: black;
+}
+
+.home {
+    padding-inline: var(--layout-padding);
+}
+
+.store {
+    padding-inline: var(--layout-padding);
+}
+
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.product-preview {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding: 1.5rem;
+    background-color: rgb(230, 230, 230);
+    box-shadow: 0 3px 10px #00000030;
+    gap: 0.5rem;
+    // overflow: hidden;
+
+    .title {
+        font-weight: 600;
+        align-self: center;
+    }
+
+    .ctg {
+        display: flex;
+        align-items: center;
+        span:first-child {
+            margin-inline-end: 0.5rem;
+        }
+
+        span:last-child {
+            padding: 0.2rem 0.5rem;
+            background-color: rgb(196, 196, 196);
+            top: 10%;
+            right: 10%;
+        }
+    }
+
+    .desc {
+        max-width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin-bottom: 0.5rem;
+
+        &.open {
+            white-space: unset;
+            overflow: auto;
+            text-overflow: unset;
+        }
+
+        span:first-child {
+            margin-inline-end: 0.5rem;
+        }
+
+        span:last-child {
+            cursor: pointer;
+        }
+    }
+
+    .img-container {
+        img {
+            width: 100%;
+            vertical-align: text-bottom;
+        }
+    }
+}
