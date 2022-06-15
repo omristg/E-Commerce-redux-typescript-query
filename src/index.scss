@@ -58,6 +58,24 @@ button {
 
 .store {
     padding-inline: var(--layout-padding);
+    .pagination {
+        width: max-content;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        margin-bottom: 1.2rem;
+
+        button {
+            display: flex;
+            align-items: center;
+            gap: 0.2rem;
+
+            > *:not(span) {
+                margin-top: 2px;
+            }
+        }
+    }
 }
 
 .product-list {
@@ -209,6 +227,10 @@ button {
             }
 
             .actions {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                gap: 0.8rem;
                 .counter {
                     display: flex;
                     align-items: center;

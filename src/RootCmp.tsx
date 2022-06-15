@@ -7,6 +7,8 @@ import { ReactQueryDevtools } from 'react-query/devtools'
 import { queryClient } from './queryHooks/queryClient'
 import { ProductDetails } from './pages/ProductDetails'
 import { Cart } from './pages/Cart'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 export const RootCmp = () => {
 
@@ -22,6 +24,17 @@ export const RootCmp = () => {
                 </Routes>
             </Router>
             <ReactQueryDevtools />
+            <ToastContainer
+                position='bottom-center'
+                autoClose={1500}
+                hideProgressBar={true}
+                newestOnTop={false}
+                closeButton={false}
+                closeOnClick
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+            />
         </QueryClientProvider>
     )
 }
