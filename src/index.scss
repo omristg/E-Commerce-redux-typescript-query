@@ -49,10 +49,9 @@ button {
     padding-inline: var(--layout-padding);
     padding-block: 2rem;
     background-color: black;
+    box-shadow: 0 3px 15px #00000040;
     margin-bottom: 1.5rem;
-
     color: #fff;
-
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -65,6 +64,9 @@ button {
 
     .active {
         color: #4977b4;
+        .icon-wrapper .bubble {
+            color: #4977b4;
+        }
     }
 
     .span-cart {
@@ -83,7 +85,9 @@ button {
             top: -30%;
             right: -30%;
             font-size: 0.8rem;
-            background-color: blueviolet;
+            font-weight: 700;
+            background-color: white;
+            color: black;
             padding: 4px 5px;
             border-radius: 50%;
         }
@@ -116,6 +120,7 @@ button {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 2rem;
+    margin-bottom: 2rem;
 }
 
 .product-preview {

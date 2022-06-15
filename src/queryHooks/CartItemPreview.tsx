@@ -1,6 +1,6 @@
 import { CartItem } from "../models/CartItem.model"
 import { formattedPrice } from "../services/util.service"
-import { useAddToCart } from "./useAddToCart"
+import { useOptimisticUpdateCart } from "./useAddToCart"
 import { useDeleteItem } from "./useDeleteItem"
 import { FaTrash } from 'react-icons/fa'
 import { AiOutlinePlus } from 'react-icons/ai'
@@ -14,11 +14,11 @@ export const CartItemPreview = ({ item }: Props) => {
 
     const { id, title, image, quantity, price } = item
 
-    const { mutate: addToCart } = useAddToCart()
     const { mutate: deleteItem } = useDeleteItem()
+    const { mutate: updateCart } = useOptimisticUpdateCart()
 
     const onChangeQuantity = (quantity: number) => {
-        addToCart({ itemToAdd: item, quantity })
+        updateCart({ itemToAdd: item, quantity })
     }
 
     return (

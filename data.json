@@ -4,7 +4,7 @@
       "id": 1,
       "title": "Tasty Steel Shirt",
       "price": 312,
-      "quantity": 11,
+      "quantity": 5,
       "image": "https://api.lorem.space/image/furniture?w=640&h=480&r=2637",
       "categoryId": 3
     },
@@ -12,9 +12,17 @@
       "id": 2,
       "title": "Awesome Cotton Mouse",
       "price": 593,
-      "quantity": 3,
+      "quantity": 5,
       "image": "https://api.lorem.space/image/furniture?w=640&h=480&r=1972",
       "categoryId": 3
+    },
+    {
+      "id": 9,
+      "title": "Tasty Plastic Keyboard",
+      "price": 22,
+      "quantity": 2,
+      "image": "https://api.lorem.space/image/shoes?w=640&h=480&r=9566",
+      "categoryId": 4
     }
   ]
 }

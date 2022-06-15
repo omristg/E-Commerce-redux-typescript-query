@@ -42,7 +42,6 @@ export const ProductPreview = ({ product }: Props) => {
     return (
         <div className="product-preview" onClick={() => navigate(`/store/${product.id}`)}>
             <div className="title">{title}</div>
-            <div>{id}</div>
             <div className="price">Price: {formattedPrice(price)}</div>
             <div className="ctg">
                 <span>Category:</span>
