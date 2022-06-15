@@ -9,13 +9,19 @@ const productsAPI = axios.create({
 })
 
 const getProducts = async ({ queryKey }: QueryFunctionContext) => {
-    const pageNum = queryKey[1]
+    const pageNum = Number(queryKey[1])
+    const offset = pageNum * PRODUCTS_PER_PAGE
     const { data } = await productsAPI.get<Product[]>('products', {
         params: {
-            offset: pageNum,
+            offset,
             limit: PRODUCTS_PER_PAGE
         }
     })
+    return data
+}
+
+const getAllProducts = async () => {
+    const { data } = await productsAPI.get<Product[]>('products')
     return data
 }
 
@@ -30,8 +36,22 @@ export const useProducts = (pageNum: number) => {
         onSuccess: () => {
             const nextPage = pageNum + 1
             queryClient.prefetchQuery([queryKeys.products, nextPage], getProducts)
-        }
+        },
+        keepPreviousData: true
     })
 
     return { products, isLoading }
+}
+
+export const useProductsLength = () => {
+    const { data: productsLength = 0 } = useQuery(
+        queryKeys.allProducts,
+        getAllProducts, {
+        select: (products) => {
+            return Math.floor((products.length - 1) / PRODUCTS_PER_PAGE)
+        }
+
+    })
+
+    return { productsLength }
 }

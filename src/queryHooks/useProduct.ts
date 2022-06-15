@@ -13,9 +13,9 @@ export const useProduct = (productId: number) => {
 
     const queryClient = useQueryClient()
 
-    const { data: product = null } = useQuery([queryKeys.products, productId], () => getProduct(productId), {
+    const { data: product = null } = useQuery([queryKeys.product, productId], () => getProduct(productId), {
         initialData: () => {
-            const products: Product[] | undefined = queryClient.getQueryData(queryKeys.products)
+            const products: Product[] | undefined = queryClient.getQueryData(queryKeys.allProducts)
             if (!products) return undefined
             return products.find(product => product.id === productId)
         }

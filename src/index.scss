@@ -50,6 +50,44 @@ button {
     padding-block: 2rem;
     background-color: black;
     margin-bottom: 1.5rem;
+
+    color: #fff;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    nav {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .active {
+        color: #4977b4;
+    }
+
+    .span-cart {
+        margin-inline-end: 0.3rem;
+    }
+
+    .icon-wrapper {
+        position: relative;
+
+        .icon {
+            font-size: 1.8rem;
+        }
+
+        .bubble {
+            position: absolute;
+            top: -30%;
+            right: -30%;
+            font-size: 0.8rem;
+            background-color: blueviolet;
+            padding: 4px 5px;
+            border-radius: 50%;
+        }
+    }
 }
 
 .home {
@@ -67,10 +105,6 @@ button {
         margin-bottom: 1.2rem;
 
         button {
-            display: flex;
-            align-items: center;
-            gap: 0.2rem;
-
             > *:not(span) {
                 margin-top: 2px;
             }
@@ -239,4 +273,18 @@ button {
             }
         }
     }
+}
+
+.react-icons-global {
+    display: block;
+}
+
+.btn-icon {
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+}
+
+.btn-square {
+    padding: 0.4rem;
 }

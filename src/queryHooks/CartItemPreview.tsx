@@ -28,18 +28,26 @@ export const CartItemPreview = ({ item }: Props) => {
             <img src={image} alt={title} />
             <div className="actions">
                 <div className="counter">
-                    <button onClick={() => onChangeQuantity(1)}>
+
+                    <button
+                        className="btn-square"
+                        onClick={() => onChangeQuantity(1)}
+                    >
                         <AiOutlinePlus />
                     </button>
                     <div>{quantity}</div>
                     <button
+                        className="btn-square"
                         onClick={() => onChangeQuantity(-1)}
                         disabled={quantity! <= 1}
                     >
                         <AiOutlineMinus />
                     </button>
                 </div>
-                <button onClick={() => deleteItem(id)}>
+                <button
+                    className="btn-square"
+                    onClick={() => deleteItem(id)}
+                >
                     <FaTrash />
                 </button>
             </div>

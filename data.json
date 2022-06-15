@@ -1,3 +1,20 @@
 {
-  "cart": []
+  "cart": [
+    {
+      "id": 1,
+      "title": "Tasty Steel Shirt",
+      "price": 312,
+      "quantity": 11,
+      "image": "https://api.lorem.space/image/furniture?w=640&h=480&r=2637",
+      "categoryId": 3
+    },
+    {
+      "id": 2,
+      "title": "Awesome Cotton Mouse",
+      "price": 593,
+      "quantity": 3,
+      "image": "https://api.lorem.space/image/furniture?w=640&h=480&r=1972",
+      "categoryId": 3
+    }
+  ]
 }

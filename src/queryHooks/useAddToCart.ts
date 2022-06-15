@@ -2,6 +2,7 @@ import { CartItem } from "../models/CartItem.model";
 import { useMutation, useQueryClient } from "react-query";
 import { queryKeys } from "./queryKeys";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 type Arguments = { itemToAdd: CartItem, quantity: number }
 
@@ -29,6 +30,7 @@ export const useAddToCart = () => {
     const { mutate } = useMutation(addToCart, {
         onSuccess: () => {
             queryClient.invalidateQueries([queryKeys.cartItems])
+            toast.success('Item added to cart!')
         }
     })
     return { mutate }

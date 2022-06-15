@@ -17,6 +17,8 @@ export const ProductPreview = ({ product }: Props) => {
     const { title, price, description: desc, category: ctg, images, id } = product
     const navigate = useNavigate()
 
+
+
     const { mutate: addToCart } = useAddToCart()
 
     const onToggleDesc = (ev: React.MouseEvent) => {
@@ -40,6 +42,7 @@ export const ProductPreview = ({ product }: Props) => {
     return (
         <div className="product-preview" onClick={() => navigate(`/store/${product.id}`)}>
             <div className="title">{title}</div>
+            <div>{id}</div>
             <div className="price">Price: {formattedPrice(price)}</div>
             <div className="ctg">
                 <span>Category:</span>
@@ -56,10 +59,12 @@ export const ProductPreview = ({ product }: Props) => {
             </div>
 
             <div className="actions">
-                <button onClick={(ev) => {
-                    ev.stopPropagation()
-                    onAddToCart()
-                }}>
+                <button
+                    className="btn-icon"
+                    onClick={(ev) => {
+                        ev.stopPropagation()
+                        onAddToCart()
+                    }}>
                     <BsFillCartPlusFill />
                     <span>Add</span>
                 </button>

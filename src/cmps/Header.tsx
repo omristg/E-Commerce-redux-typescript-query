@@ -2,23 +2,11 @@ import { NavLink } from 'react-router-dom'
 
 import styled from 'styled-components'
 import { useCartItems } from '../queryHooks/useCartItems'
+import { AiOutlineShoppingCart } from 'react-icons/ai'
 
 const SHeader = styled.header`
 
-    color: #fff;
-
-    display: flex;
-    justify-content: space-between;
-    
-    
-    nav {
-        display: flex;
-        gap: 1.5rem;
-    }
-    
-    .active {
-        color: #4977b4;
-    }
+ 
 
 `
 
@@ -40,9 +28,14 @@ export const Header = () => {
             <nav>
                 <NavLink to='/'>Home</NavLink>
                 <NavLink to='/store'>Store</NavLink>
-                <NavLink to='/cart'>Cart {totalItems()}</NavLink>
+                <NavLink to='/cart' className='btn-icon'>
+                    <span className='span-cart'>Cart</span>
+                    <div className="icon-wrapper">
+                        <div className='bubble'>{totalItems()}</div>
+                        <AiOutlineShoppingCart className='icon' />
+                    </div>
+                </NavLink>
             </nav>
-
         </SHeader>
     )
 }
